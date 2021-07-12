@@ -4,7 +4,7 @@ import ChartCard from "../ChartCard/ChartCard";
 import {checkTooltipLabelLength} from "../../utils";
 
 function Ttfb({startDate, endDate, ...rest}) {
-    const [{ttfb, ttfbUpdated}] = useTTFB(startDate, endDate);
+    const {ttfb, ttfbUpdated} = useTTFB(startDate, endDate);
     console.count('ttfb')
     return <ChartCard title={"TTFB"} updatedAt={ttfbUpdated} data={{
         labels: ttfb?.map(n => `${n.initiatorType} ${n.type ? `\n${n.type}` : ''} \n${checkTooltipLabelLength(n?.name)}\n${new Date(n.createdAt).toLocaleString()}`),

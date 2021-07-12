@@ -8,5 +8,5 @@ export default function useTTFB(startDate, endDate) {
             setState(s => ({...s, ttfb: res, ttfbUpdated: new Date()}));
         });
     }, [startDate, endDate]);
-    return [state, new Date()];
+    return state;
 }
