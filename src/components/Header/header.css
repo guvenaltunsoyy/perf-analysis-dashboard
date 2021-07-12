@@ -15,6 +15,34 @@
     border-radius: 8px;
 }
 
+.date-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.buttons button {
+    margin: 5px 0 5px 5px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: var(--background-color);
+    transition: all 0.5s;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.buttons button:hover {
+    cursor: pointer;
+    transform: scale3d(1.2, 1.2, 2);
+}
+
 @media (max-width: 750px) {
     .header {
         flex-direction: column;
@@ -23,5 +51,13 @@
 
     .header img {
         max-width: 90vw;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons button {
+        width: 100%;
     }
 }

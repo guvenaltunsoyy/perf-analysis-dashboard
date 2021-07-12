@@ -4,7 +4,7 @@ import {checkTooltipLabelLength} from "../../utils";
 
 function Ttfb({ttfb, ttfbUpdated, ...rest}) {
     return <ChartCard title={"TTFB"} updatedAt={ttfbUpdated} data={{
-        labels: ttfb?.map(n => `${n.initiatorType} ${n.type ? `\n${n.type}` : ''} \n${checkTooltipLabelLength(n?.name)}\n${new Date(n.createdAt).toLocaleString()}`),
+        labels: ttfb?.map(n => `${n.initiatorType} ${n.type ? `\n${n.type}` : ''} \n${checkTooltipLabelLength(n?.name)}\n${new Date(n.createdAt).toLocaleString(window?.navigator?.language)}`),
         datasets: [
             {
                 data: ttfb?.map(n => n.ttfb?.toFixed(2) ?? 0),

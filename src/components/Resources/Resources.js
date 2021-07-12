@@ -4,7 +4,7 @@ import {checkTooltipLabelLength} from "../../utils";
 
 function Resources({resources, resourcesUpdated, ...rest}) {
     return <ChartCard title={"Network Timings"} updatedAt={resourcesUpdated} data={{
-        labels: resources?.map(n => `${n.initiatorType}  \n${checkTooltipLabelLength(n?.name)}\n${new Date(n.createdAt).toLocaleString()}`),
+        labels: resources?.map(n => `${n.initiatorType}  \n${checkTooltipLabelLength(n?.name)}\n${new Date(n.createdAt).toLocaleString(window?.navigator?.language)}`),
         datasets: [
             {
                 data: resources?.map(n => (n?.responseEnd - n?.responseStart)?.toFixed(2) ?? 0),

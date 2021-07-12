@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './homepage.css'
 import Header from "../../components/Header/Header";
 import TTFB from "../../components/TTFB/Ttfb";
@@ -14,6 +14,10 @@ function HomePage({...rest}) {
     const [resources, setResources] = useState({});
     const [domEvents, setDomEvents] = useState({});
     const [windowEvents, setWindowEvents] = useState({});
+    useEffect(() => {
+        // get last 30 minutes events by default
+        handleDateChange(new Date(new Date() - 1800000), new Date());
+    }, []);
     const handleDateChange = (startDate, endDate) => {
         getTTFB(startDate, endDate).then(res => setTtfb({ttfb: res, ttfbUpdated: new Date()}))
         getResources(startDate, endDate).then(res => setResources({resources: res, resourcesUpdated: new Date()}))

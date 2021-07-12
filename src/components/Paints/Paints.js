@@ -3,12 +3,12 @@ import ChartCard from "../ChartCard/ChartCard";
 import {checkTooltipLabelLength} from "../../utils";
 
 function Paints({paints, paintsUpdated, ...rest}) {
-    return <ChartCard title={"Paints"} updatedAt={paintsUpdated} data={{
+    return <ChartCard title={"FCP"} updatedAt={paintsUpdated} data={{
         labels: paints?.map(n => checkTooltipLabelLength(n?.name)),
         datasets: [
             {
                 data: paints?.map(n => n.startTime?.toFixed(2) ?? 0),
-                label: 'Paints',
+                label: 'FCP',
                 backgroundColor: 'rgb(0, 255, 120)',
                 borderColor: 'rgba(0, 0, 255, 0.2)',
             }
