@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {getPaints} from "../apis";
 
 export default function usePaints(startDate, endDate) {

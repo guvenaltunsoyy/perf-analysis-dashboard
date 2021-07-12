@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {getTTFB} from "../apis";
 
 export default function useTTFB(startDate, endDate) {

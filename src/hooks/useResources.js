@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {getResources} from "../apis";
 
 export default function useResources(startDate, endDate) {
