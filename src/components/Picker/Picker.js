@@ -22,7 +22,9 @@ export default function Picker({show = false, onDateChange, ...rest}) {
             customInput={<CustomInput/>}
             onChange={(update) => {
                 setDateRange(update)
-                if (update[0] && update[1]) onDateChange(update[0], update[1]);
+                if (update[0] && update[1]) {
+                    onDateChange(update[0], new Date(update[1].setHours(23, 59, 59)));
+                }
             }}
             placeholderText="Select Date"
             dateFormat="dd/MM/yyy"

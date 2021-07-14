@@ -54,7 +54,7 @@ export default function Header({onDateChange, ...rest}) {
                 ${selectedEndDate.toLocaleTimeString(window?.navigator?.language)}`}
             </Label>
             <Label fontSize={14}>
-                Difference: {(selectedEndDate - selectedStartDate) / 1000 / 60}m
+                Difference: {((selectedEndDate - selectedStartDate) / 1000 / 60).toFixed()}m
             </Label>
         </div>
 
